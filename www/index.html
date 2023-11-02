@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Hello World</title>
+    </head>
+    <body>
+    <!-------------------------------- PAGE 1 ---------------------------------------->
+
+    <div id="ecran">
+        <img class="logo" src="img/logo_kitadi.png" alt="logo KITADI">
+        <div id="recherche">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success " type="submit">Search</button>
+        </div>
+        <button id="ajouterUnClient" class="boutonAjouter" type="button">Ajouter un client</button>
+        <div id="tableContainer" class="row align-items-start"></div>
+    </div>
+
+    <!-------------------------------- PAGE 2 ---------------------------------------->
+
+    <div id="p2_container">
+        <button id="p2_bouton_retour">Retour</button>
+        <img class="logo" src="img/logo_kitadi.png" alt="Logo Kitadi">
+
+        <div class="p2_informations">
+            <div>
+                <p>Numéro client :</p>
+                <p id="p2_input_numero">0</p>
+            </div>
+            <div>
+                <p>Nom :</p>
+                <input id="p2_input_nom" type="text">
+            </div>
+            <div>
+                <p>Adresse :</p>
+                <input id="p2_input_adresse" type="text">
+            </div>
+            <div>
+                <p>Téléphone :</p>
+                <input id="p2_input_telephone" type="text">
+            </div>
+            <div>
+                <p>Email :</p>
+                <input id="p2_input_email" type="text">
+            </div>
+
+            <button id="p2_bouton_sauvegarder">Sauvegarder</button>
+        </div>
+
+        <div class="p2_puissance">
+            <p>45W</p>
+        </div>
+
+        <button id="p2_bouton_ajouter">Ajouter une pièce</button>
+
+        <div id="p2_container_pieces"></div>
+    </div>
+
+    <!-------------------------------- PAGE 3 ---------------------------------------->
+
+
+<div id="piece">
+</div>
+
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>
