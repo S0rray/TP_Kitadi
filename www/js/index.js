@@ -462,67 +462,22 @@ function AfficherPiece(){
   contenuDivPiece += '</main>';
 
   pieceDiv.innerHTML = contenuDivPiece;
-}
+  pieceDiv.innerHTML = contenuDivPiece;
+  const btnRetour = document.getElementById("btnRetour");
+  const btnAccueil = document.getElementById("btnAccueil");
 
-// Fonction couleur
-function couleur(element, input, color) {
-  element.style.color = color;
-  input.style.borderColor = color;
-  input.style.borderWidth = '2px';
-  input.style.borderStyle = 'solid';
-}
+  btnRetour.addEventListener("click", () => {
+    page2.style.display = "block";
+    pieceDiv.innerHTML = "";
+  });
 
-// Affichage de la page pièce
-if (editPiece) {
-  // Mode édition
+  btnAccueil.addEventListener("click", () => {
+    page1.style.display = "block";
+    pieceDiv.innerHTML = "";
+  });
+  
 
-}
-else {
-  // Mode création
-  AfficherPiece();
-}
-
-// Remplir le champ volume
-function calculVolume () {
-  if (largVal || longVal || hautVal) {
-      volume = inputLarg.value * inputLong.value * inputHaut.value;
-      volVal = true;
-  }
-  console.log("volume = ")
-}
-
-// Vider le champ volume
-function viderVolume () {
-  if (!largVal || !longVal || !hautVal) {
-      volume = "";
-      volVal = false;
-  }
-  console.log("volume = ")
-}
-
-// Calcul du deltaT
-function delta() {
-  if (tc || tb) {
-      deltaT = inputTempConf.value - inputTempBase.value;
-      deltaVal = true;
-  } else {
-      deltaVal = false;
-  }
-  console.log("DeltaT = " + deltaT);
-}
-
-// Calcul de la puissance de la pièce
-function puissanceP() {
-  if (g || tb || deltaVal) {
-      puissancePiece.value = inputIsolation.value * volume * deltaT;
-      puissancePiece.innerHTML = puissancePiece.value;
-  }
-  console.log("puissanceP = " + puissancePiece.value);
-}
-
-
-
-// ****************** //
+  // ****************** //
 // Gestion des inputs //
 // ****************** //
 
@@ -765,3 +720,53 @@ document.querySelector("form").addEventListener("submit", function(e){
       e.preventDefault();
   }
 })
+}
+
+// Fonction couleur
+function couleur(element, input, color) {
+  element.style.color = color;
+  input.style.borderColor = color;
+  input.style.borderWidth = '2px';
+  input.style.borderStyle = 'solid';
+}
+
+// Remplir le champ volume
+function calculVolume () {
+  if (largVal || longVal || hautVal) {
+      volume = inputLarg.value * inputLong.value * inputHaut.value;
+      volVal = true;
+  }
+  console.log("volume = ")
+}
+
+// Vider le champ volume
+function viderVolume () {
+  if (!largVal || !longVal || !hautVal) {
+      volume = "";
+      volVal = false;
+  }
+  console.log("volume = ")
+}
+
+// Calcul du deltaT
+function delta() {
+  if (tc || tb) {
+      deltaT = inputTempConf.value - inputTempBase.value;
+      deltaVal = true;
+  } else {
+      deltaVal = false;
+  }
+  console.log("DeltaT = " + deltaT);
+}
+
+// Calcul de la puissance de la pièce
+function puissanceP() {
+  if (g || tb || deltaVal) {
+      puissancePiece.value = inputIsolation.value * volume * deltaT;
+      puissancePiece.innerHTML = puissancePiece.value;
+  }
+  console.log("puissanceP = " + puissancePiece.value);
+}
+
+
+
