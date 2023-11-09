@@ -202,6 +202,7 @@ button:active, .bouton:active{
     background-color: #b7ce66;
     width: 90%;
     border-radius: 20px;
+    margin-bottom: 10px;
 }
 
 #p2_container #p2_bouton_ajouter img {
