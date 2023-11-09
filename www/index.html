@@ -1,75 +1,137 @@
 <!DOCTYPE html>
 
-<html>
-    <head>
-        <meta charset="utf-8">
+<html lang="fr">
 
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <link rel="stylesheet" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-    <!-------------------------------- PAGE 1 ---------------------------------------->
+<head>
+  <meta charset="utf-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
+  <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover" />
 
-    <div id="ecran">
-        <img class="logo" src="img/logo_kitadi.png" alt="logo KITADI">
-        <div id="recherche">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success " type="submit">Search</button>
-        </div>
-        <button id="ajouterUnClient" class="boutonAjouter" type="button">Ajouter un client</button>
-        <div id="tableContainer" class="row align-items-start"></div>
+  <title>Kitadi</title>
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <script src="cordova.js" defer></script>
+  <script src="js/index.js" defer></script>
+</head>
+
+<body id="body">
+  <img class="logo" src="img/logo_kitadi.png" alt="logo KITADI" />
+  <!-------------------------------- PAGE 1 ---------------------------------------->
+  <div id="p1_container">
+    <div id="divRecherche">
+      <input id="input_recherche" class="inputRecherche" type="search" placeholder="Chercher" aria-label="Search" />
+      <button id="bouton_recherche" class="btnRecherche" type="submit">
+        <img src="img/rechercher.png" alt="recherche">
+      </button>
+    </div>
+    <button id="ajouterUnClient" class="boutonAjouter" type="button">
+      <img src="img/adduser.png" alt="adduser">
+    </button>
+    <div id="tableContainer" class="row align-items-start"></div>
+  </div>
+
+  <!-------------------------------- PAGE 2 ---------------------------------------->
+  <div id="p2_container">
+    <button id="p2_bouton_retour">
+      <img src="img/accueil.png" alt="accueil" />
+    </button>
+
+    <div class="p2_informations">
+
+      <p>Numéro client :</p>
+      <p id="p2_input_numero">0</p>
+
+      <p>Nom :</p>
+      <input id="p2_input_nom" type="text" />
+
+      <p>Adresse :</p>
+      <input id="p2_input_adresse" type="text" />
+
+      <p>Code Postal :</p>
+      <input id="p2_input_cp" type="number" />
+
+      <p>Téléphone :</p>
+      <input id="p2_input_telephone" type="text" />
+
+      <p>Email :</p>
+      <input id="p2_input_email" type="email" />
+
+
+      <button id="p2_bouton_supprimer">
+        <img src="img/poubelle.png" alt="delete">
+      </button>
+      <button id="p2_bouton_sauvegarder">
+        <img src="img/sauvegarder.png" alt="save">
+      </button>
     </div>
 
-    <!-------------------------------- PAGE 2 ---------------------------------------->
-
-    <div id="p2_container">
-        <button id="p2_bouton_retour">Retour</button>
-        <img class="logo" src="img/logo_kitadi.png" alt="Logo Kitadi">
-
-        <div class="p2_informations">
-            <div>
-                <p>Numéro client :</p>
-                <p id="p2_input_numero">0</p>
-            </div>
-            <div>
-                <p>Nom :</p>
-                <input id="p2_input_nom" type="text">
-            </div>
-            <div>
-                <p>Adresse :</p>
-                <input id="p2_input_adresse" type="text">
-            </div>
-            <div>
-                <p>Téléphone :</p>
-                <input id="p2_input_telephone" type="text">
-            </div>
-            <div>
-                <p>Email :</p>
-                <input id="p2_input_email" type="text">
-            </div>
-
-            <button id="p2_bouton_sauvegarder">Sauvegarder</button>
-        </div>
-
-        <div class="p2_puissance">
-            <p>45W</p>
-        </div>
-
-        <button id="p2_bouton_ajouter">Ajouter une pièce</button>
-
-        <div id="p2_container_pieces"></div>
+    <div class="p2_puissance">
+      <p id="p2_puissance">0</p>
+      <p>&nbsp;W</p>
     </div>
 
-    <!-------------------------------- PAGE 3 ---------------------------------------->
+    <button id="p2_bouton_ajouter">
+      <img src="img/ajoutmaison.png" alt="ajoutpiece">
+    </button>
 
+    <div id="p2_container_pieces"></div>
+  </div>
 
-<div id="piece">
-</div>
+  <!-------------------------------- PAGE 3 ---------------------------------------->
+  <div id="p3_container">
+    <header>
+      <div class="btnNav">
+        <button id="btnRetour">
+          <img src="img/retour.png" alt="retour" />
+        </button>
+        <button id="btnAccueil">
+          <img src="img/accueil.png" alt="accueil" />
+        </button>
+      </div>
+    </header>
 
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
-    </body>
+    <main>
+      <form action="">
+        <div class="infosContainer">
+          <div class="infos">
+            <label for="piece">Pièce</label>
+            <input type="text" name="piece" id="piece" />
+          </div>
+          <div class="infos">
+            <label for="tempBase">Température de base (°C)</label>
+            <input type="number" id="tempBase" name="tempBase" />
+          </div>
+          <div class="infos">
+            <label for="tempConf">Température confort (°C)</label>
+            <input type="number" id="tempConfort" name="tempConf" />
+          </div>
+          <div class="infos">
+            <label for="long">Longueur (m)</label>
+            <input type="number" id="longueur" name="long" />
+          </div>
+          <div class="infos">
+            <label for="larg">Largeur (m)</label>
+            <input type="number" id="largeur" name="larg" />
+          </div>
+          <div class="infos">
+            <label for="haut">Hauteur (m)</label>
+            <input type="number" id="hauteur" name="haut" />
+          </div>
+          <div class="infos">
+            <label for="isolation">Niveau d'isolation</label>
+            <input type="number" id="isolation" name="isolation" />
+          </div>
+        </div>
+        <button class="valider" id="valider"><img src="img/sauvegarder.png" alt="valider"></button>
+        <div class="puissance">
+          <p>Puissance P <br /><span id="puissance">0</span> W</p>
+        </div>
+        <!-- <input type="submit" value="Valider" class="valider" id="valider" /> -->
+      </form>
+    </main>
+  </div>
+</body>
+
 </html>
